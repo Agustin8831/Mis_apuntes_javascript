@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>    
+    console.log("-------    -------");
+    // Creamos una propiedad de manera dinamica
+    const objUsuarios = {};
+    const baseDatos = ["jose","raul","maria","pedro","mario","joel"];
+    
+    baseDatos.forEach((element,i) => {
+      objUsuarios[`id_${i+1}`] = element;
+    });
+    
+    console.log(objUsuarios);
+
+    console.log("");
+
+
+  </script>
+</body>
+</html>

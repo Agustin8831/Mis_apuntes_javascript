@@ -1,0 +1,1 @@
+console.log("Soy el archivo no-module.js, solo aparecere si el navegador es muy antigua y no me reconoce me ejecutare");

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    
+    // Promesas
+
+    // Es como un if else, si se cumple se ejecutara el resolve de lo contrario se ejecutaria reject
+    /*
+    
+    Una promesa es un objeto que representa el resultado de una operación asíncrona y tiene 
+    3 estados posibles:
+
+    Pendiente.
+    Resuelta.
+    Rechazada.
+<
+    Tienen la particularidad de que se pueden encadenar (then), siendo el resultado de una 
+    promesa, los datos de entrada de otra posible función.
+
+    Las promesas mantienen un código más legible y mantenible que las callbacks, además 
+    tienen un mecanismo para la detección de errores (catch) que es posible usar en 
+    cualquier parte del flujo de datos.
+    
+    */ 
+    
+   
+   // Puedes definir una promesa en JavaScript llamando a la clase Promise y construyendo un objeto, así:
+   const miPromesa1 = new Promise((resolve, reject) => {
+     setTimeout(() => {
+       resolve('este es el valor de miPromesa 1');
+      }, 100);
+    });
+    console.log(miPromesa1);
+    
+    // Aunque, crear un objeto no es la única forma de definir una promesa. También puedes usar la API incorporada Promise para lograr lo mismo:
+    const otraPromesa = Promise.resolve("este es el valor de otraPromesa");
+    console.log(otraPromesa);
+    // --------------------------------------------------------------
+    // Promesas rechazadas en JavaScript.
+    // Una promesa también puede ser rechazada. La mayoría del tiempo, se rechazan porque JS encuentra algún tipo de error mientras ejecuta el código asincrónico. En ese escenario, llama la función reject().
+    
+    const miPromesa2 = new Promise((resolve, reject) => {
+      let a = false;
+      setTimeout(() => {
+        return (a) 
+        ? resolve('se encontró a')
+        : reject('lo siento, no se encontró a');
+      }, 300);
+    }); 
+    console.log(miPromesa2);
+    
+    
+    
+  </script>
+</body>
+</html>

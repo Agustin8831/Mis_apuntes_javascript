@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    
+    // Desestructuración 
+    // Es una forma de agregarles los valores de un (arrays - object) 
+    // en distintas variables.
+    
+    console.log("");
+    console.log("-------  Desestructuración en arrays  -------");
+
+    // Primera manera 
+    // crear el array, despues asignar los valores a las 
+    // variables creandolas ahi mismo.
+    const datos = ["Agustin","Perez",20];
+    let [nombre,apellido,edad] = datos;
+    console.log(nombre,apellido,edad);
+    console.log("");
+
+    // Segunda manera 
+    // Crear primero las variables y despues asignarles los valores del array.
+    let a,b,c;
+    [a,b,c] = [1,"hola",false];
+    console.log(a,b,c);
+    console.log("");
+
+    // Tercer manera 
+    // Podemos agregar valores predeterminados a las variables y solo se 
+    // remplazaran los valores dependiento de elementos de un array
+    [a=1,b=2,c=3] = ["hola"];
+    console.log(a,b,c);
+    console.log("");
+
+    console.log("-------  Desestructuración en arrays tips -------");
+  
+    // Desestructuración combinada de arreglos y objetos
+    const datos3 = {
+    name3: ["pedro","jose"],
+    apellido3: ["perez","lopez"]
+    }
+    let {name3: [nombre1,nombre2]} = datos3;
+    console.log(nombre1,nombre2);
+    console.log("");
+
+    // solo se pasan los elementos por la cantidad de variables creadas
+    [a,b,c] = [10, 20, 30, 40, 50];
+    console.log(a,b,c); 
+    console.log("");
+    
+    // si hay mas variables que elementos, estos tendran valor de undefined
+    [a,b,c,d,e] = [10, 20, 30];
+    console.log(a,b,c,d,e); 
+    console.log("");
+    
+    // Usando los tres puntos antes de la variable se le agregara el
+    // resto de elementos de la variable
+    [a,b, ...c] = ["a","b","c","d","e","f"];
+    console.log(a,b,c); 
+    console.log("");
+
+    // Intercambio de variables
+    let varUno = true;
+    let varDos = "hola";
+
+    [varDos,varUno] = [varUno, varDos];
+    console.log(varUno,varDos);
+    console.log("");
+
+    // Ignorar algunos valores
+    [var1, ,var3] = [10, 20, 30];
+    console.log(var1,var3); 
+    console.log("");
+
+
+
+
+
+  </script>
+</body>
+</html>

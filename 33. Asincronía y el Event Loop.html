@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /*
+    Javascript usa un modelo asincrono y no bloqueante, con un loop de eventos implementado en un solo hilo
+    (single thread) para operaciones de entrada y salida (input/output)
+    */ 
+
+    // SINCRONO = Todo es paso por paso se bloquea mientras espera la respuesta
+    // ASINCRONO = Si un operacion se tarda en responder se pone en la fila de espera, mientras las otras operaciones se van realizando, las operaciones que salen de la fila de espera despues se imprimen al final
+    // PARALELISMO = Las tareas se ejecutan simultaneamente
+    // CONCURRENCIA = Cuando dos o más tareas progresan simultáneamente.
+    
+    // JAVASCRIPT ES ASINCRONO Y COMCURRENTE:
+    // 1. Solo se pueden ejecutar una instruccion a la vez
+    // 2. El event loop es la pieza es el que coordina la ejecucion, eventos y callbacks
+    
+    console.log("-------  ASINCRONO NO BLOQUENTE  -------");
+    /*
+    Cada operación se ejecuta y devuelve inmediatamente el control al hilo, evitando el bloqueo, cuando cada operación termine se enviará una notificación de que ha terminado, es entonces cuando la respuesta se encolará para ser procesada.
+    */ 
+    console.log("inicio");
+
+    function dos () {
+      // entra en la fila de tarea en segundo plano
+      setTimeout(()=>{
+        console.log("dos");
+      }, 1000)
+    };
+
+    function uno() {
+      // Aunque tenga de espera 0 no se imprimira de inmediato ya que este entra en la fila de tarea en segundo plano
+      setTimeout(()=>{
+        console.log("uno");
+      }, 0)
+      dos();
+      console.log("tres");
+    };
+
+    uno();
+    console.log("fin");
+    
+    console.log("-------  SINCRONO BLOQUEANTE  -------");
+    /*
+    Cada operación se hace de una vez, bloqueando el flujo de ejecución, el hilo es bloqueado mientras espera la respuesta, cuando esta se procesa pasa a la siguiente operación y así sucesivamente al terminar todas las operaciones.
+    */ 
+    console.log("inicio");
+    
+    function cinco() {
+      console.log("cinco");      
+    }
+    
+    function cuatro() {
+      console.log("cuatro");
+      cinco();      
+      console.log("seis");
+    }
+    cuatro();
+    console.log("fin");
+    console.log("--------------");
+    
+    </script>
+</body>
+</html>

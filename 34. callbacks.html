@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    
+    // CallBack
+    // Es una funcion pasado como parametro a otra funcion
+    // y este se ejecutara despues de que otra lo haga
+
+
+    // Es un mecanismo para asegurar que cierto código no se ejecute hasta que otro haya terminado.
+
+    // ¿Por qué usar funciones Callback?
+    // cuando solicitamos datos desde otras fuentes como una API externa, no siempre 
+    // sabemos cuando nuestros datos serán devueltos. En estos casos queremos esperar la 
+    // respuesta, pero no queremos que toda nuestra aplicación se detenga mientras se 
+    // recuperan los datos. Estas son situaciones dónde las funciones callback resultan útiles.
+    
+    console.log("-------  Consepto basico  -------"); 
+    function callback() {
+      console.log("Yo soy un callback");
+    }
+    function mensaje(fn) {
+      fn();
+    }
+    
+    mensaje(callback);
+
+    console.log("");
+    console.log("-------  Trabajando con setTimeout en callbacks  -------"); 
+
+    function funcion1(fn) {
+      setTimeout(() => {
+        console.log("mensaje 1");
+        fn();
+      }, 1000);
+    };
+    
+    function funcion2(){
+      console.log("mensaje 2");
+    }
+    console.log("-------  Pasando la funcion1 como parametro en la funcion2"); 
+    console.log("-------  Lograresmos nuestro resultado:"); 
+    funcion1(funcion2);
+    
+    // Porque de lo contrario invocando las dos funciones:
+    // funcion1();
+    // funcion2();
+    // Nos dara como rsultado 
+    // Mensaje 2
+    // Mensaje 1
+
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    
+    // while - En desuso
+    /*
+    Crea un bucle que ejecuta una sentencia especificada mientras cierta condición se evalúe como verdadera. Dicha condición es evaluada antes de ejecutar la sentencia
+    */ 
+    console.log("-------  while  -------");
+    let i = 0; 
+    let arr = [];
+    while (i<10) {
+      arr.push(i)
+      i++
+    }
+    console.log(arr);         
+    console.log("");
+    
+    
+    // do while
+    /*
+      Es lo mismo que while pero este primero ejecuta y despues cuestiona
+    */ 
+    console.log("-------  do while  -------");
+    i = 0; 
+    arr = [];
+    do {
+      arr.push(i)
+      i++
+    } while (i < 10);
+    console.log(arr);  
+    console.log("");
+  
+    // for
+    /*
+      Este es mas compacto que el while ya que dentro de los parentesis podemos crear la varable, hacer la condicion y poner el incremento
+    */ 
+    console.log("-------  for  -------");
+    arr = [];
+    for (let i = 0; i < 10; i++) {
+      arr.push(i)  
+    } 
+    console.log(arr);
+    console.log("");
+
+
+    // for of
+    /*
+      Con este bucle podemos recorrer un array
+    */ 
+    console.log("-------  for of  -------");
+    const datos1 = ["agustin","perez",18,"mexicano"];
+    for (const i of datos1) {
+      console.log(i);      
+    }
+    console.log("");
+
+
+    // for in
+    /*
+      Con este bucle podemos recorrer solo objectos
+    */ 
+    console.log("-------  for in  -------");
+    const datos2 = {
+      nombre: "agustin",
+      apellido: "perez",
+      nacionalida: "mexicano",
+      edad: 20
+    };
+    for (const key in datos2) {
+      console.log(
+        `
+        key: ${key}
+        elemento: ${datos2[key]}
+        `
+      );
+    }
+    console.log("");
+
+    // forEach
+    /*
+      ejecuta la función indicada una vez por cada elemento del array.
+    */ 
+    console.log("-------  forEach  -------");
+    const arr2 = [1,2,3,4,5,6,7];
+    
+    let resp = 0;
+    arr2.forEach(function suma(i) {
+      resp += i;
+    })
+    console.log(resp);
+    console.log();
+
+  </script>
+</body>
+</html>

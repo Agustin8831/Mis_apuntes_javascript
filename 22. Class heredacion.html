@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    
+    // --------------------------------------------------------
+    class Datos1 {
+      constructor(nombre,apellido) {        
+        this.nombre = nombre;
+        this.apellido =  apellido;
+      }
+      bienvenida(){
+        console.log(`Hola ${this.nombre} ${this.apellido}, ¿Como estas?`);
+      }
+      despedida(){
+        console.log(`Oye ${this.nombre}, Ya me voy`);
+      }
+    };
+    
+    // --------------------------------------------------------
+    class Datos2 extends Datos1 {
+      constructor(nombre,apellido,edad){
+        // Con super() se manda a llamar el constructor de la clase padre
+        super(nombre,apellido);
+        this.edad = edad;
+      }
+      pregunta(){
+        console.log(`Oye ${this.nombre} ${this.apellido}, tienes ${this.edad}?`);
+      }
+      despedida(){
+        console.log(`${this.nombre}, Ya me tengo que ir, bay!!`);
+      }
+    }
+
+    const persona1 = new Datos1("Rogelio","lopez");
+    const persona2 = new Datos2("Mario","Perez",22);
+
+    console.log(persona1);
+    persona1.bienvenida()
+    persona1.despedida()
+    
+    console.log("");
+    
+    console.log(persona2);
+    persona2.bienvenida()
+    persona2.pregunta()
+    persona2.despedida()
+
+  </script>
+</body>
+</html>

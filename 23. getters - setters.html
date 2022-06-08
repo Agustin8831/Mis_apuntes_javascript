@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    // Para entender mejor
+    // https://es.javascript.info/property-accessors
+    
+    // Static
+    // Un metodo estatico se puede ejecutar sin necesidad de instanciar 
+    // la clase. Son habitualmente utilizados para crear funciones para 
+    // una aplicación.
+
+    // getters - setters
+    // son metodos especiales que nos permiten establecer y obtener los 
+    // valores de atributos de nuestra clase
+
+    // Una función que obtiene un valor de una propiedad se llama getter 
+    // y una que establece el valor de una propiedad se llama setter.
+
+    class Perro {
+      constructor(nombre,sexo){
+        this.nombre = nombre;
+        this.sexo = sexo;
+        this.raza = null;
+      }
+      // static
+      static consepto(){
+        console.log("Mamífero carnívoro doméstico de la familia de los cánidos que se caracteriza por tener los sentidos del olfato y el oído muy finos");
+      }
+      // getters - obtiene y da valor
+      get getRaza(){
+        return this.raza;
+      }
+      // setters - establece el valor
+      set setRaza(value){
+        this.raza = value;
+      }
+    }
+    
+    // ------------------------------------------------------------
+    // Llamar la funcion es posible usando static
+    console.log("-------- static");
+    Perro.consepto() 
+    console.log("");
+    
+    // ------------------------------------------------------------
+    // Instancionado la clase a cueva
+    const cueva = new Perro("Cueva","Macho");
+    
+    console.log("-------- get - set");
+    // Agregando valor a raza atravez de setRaza
+    // cueva.setRaza = "Pastor Aleman";
+    cueva.setRaza = "Pastor Aleman";
+
+    // Imprimiendo
+    console.log(cueva.getRaza)
+    console.log(cueva);
+    
+    // --------------------------------------------------------------
+    // Aqui ya no puedpo invocar la funcion porque le puse static
+    // cueva.consepto() 
+
+
+  </script>
+</body>
+</html>

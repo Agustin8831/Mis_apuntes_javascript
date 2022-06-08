@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    
+    // 
+    // 
+    
+    console.log("-------  TEMPORIZADORES  -------");
+
+    // --------------  setTimeout
+    // Este solo imprime una sola vez
+    setTimeout(() => {
+      console.log("Me imprimo despues de 5 segundo porque estoy dentro de un setTimeOut");
+    }, 3000);
+    
+    // --------------  setInterval
+    // imprime Indeminidamente
+    setInterval(() =>{
+      console.log("Me imprimo varias veces despues de 2 segundo porque estoy dentro de un setInterval");
+    }, 2000)
+    
+    // --------------  clearInterval
+    // detiene un setInterval
+    // Pero este debe se estar guardado dentro de una variable
+    let intervalo = setInterval(() => {
+      console.log("No voy aparecer porque  clearInterval me detiene");
+    }, 1500);
+    clearInterval(intervalo)
+
+    // --------------  clearTimeout
+    // detiene un setTimeout
+    // Pero este debe se estar guardado dentro de una variable
+    let timeout = setTimeout(() => {
+      console.log("No voy aparecer porque  clearInterval me detiene");
+    }, 1000);
+    clearTimeout(timeout)
+
+  </script>
+</body>
+</html>

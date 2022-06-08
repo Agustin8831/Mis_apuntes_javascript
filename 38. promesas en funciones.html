@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    console.log("-------  Promesas en funciones  -------");
+
+    function cuadrado(valor) {
+      return new Promise((resolve,reject)=>{
+        setTimeout(() => {
+          resolve(
+            {
+              valor: valor,
+              resultado: valor * valor
+            }
+          );
+        }, 0 | Math.random() * 1000);
+      });
+    }
+    cuadrado(2)
+      .then(objeto =>{
+        console.log("Inicio");
+        console.log(`Promesa: ${objeto.valor}, ${objeto.resultado}`);
+        return cuadrado(3);
+      })
+      .then(objeto =>{
+        console.log(`Promesa: ${objeto.valor}, ${objeto.resultado}`);
+        return cuadrado(4);
+      })
+      .then(objeto =>{
+        console.log(`Promesa: ${objeto.valor}, ${objeto.resultado}`);
+        return cuadrad(5); // Agregando error aproposito para que se dispare el catch
+      })
+      .then(objeto =>{
+        console.log(`Promesa: ${objeto.valor}, ${objeto.resultado}`);
+        return cuadrado(6);
+      })
+      .catch(err => console.error(err))
+  </script>
+</body>
+</html>

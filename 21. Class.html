@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    
+    // class
+    // Es una formas mas simple de escribir las funciones constructoras
+    
+    console.log("-------  Class  -------");
+
+    class Datos {
+      // Constructor con parametros
+      constructor(nombre,apellido) {
+        // atributos
+        this.nombre = nombre;
+        this.apellido =  apellido;
+      }
+      // Metodos
+      bienvenida(){
+        console.log(`Hola ${this.nombre} ${this.apellido}, ¿Como estas?`);
+      }
+      despedida(){
+        console.log(`Oye ${this.nombre}, Ya me voy`);
+      }
+    };
+
+    const persona1 = new Datos("Rogelio","hernandez");
+    const persona2 = new Datos("Pedro","Lopez");
+
+    console.log(persona1);
+    persona1.bienvenida()
+    persona1.despedida()
+
+    console.log("");
+
+    console.log(persona2);
+    persona2.bienvenida()
+    persona2.despedida()
+
+  </script>
+</body>
+</html>

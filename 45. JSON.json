@@ -1,0 +1,8 @@
+
+{
+  "nombre": "Agustin",
+  "apellid": "Perez",
+  "edad": "20",
+  "nacionalidad": "Mexicano",
+  "arreglo": "[1,2,3,true,NaN,'hola']"
+}

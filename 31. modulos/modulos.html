@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modulos</title>
+</head>
+<body>
+  <h1>Modulos Javascript</h1>
+  <p>
+    permite la importación y exportación de datos entre diferentes ficheros Javascript
+  </p>
+  <h1>Export: </h1>
+  <p>
+    Exporta datos (variables, funciones, clases...) del fichero actual hacia otros que los importen.
+  </p>
+  <h1>Import</h1>
+  <p>	
+    Importa datos (variables, funciones, clases...) desde otro fichero .js al actual.
+  </p>
+  <h1>Compatibilidad en navegadores antiguos</h1>
+  <ul>
+    <li>
+      <p>Los navegadores modernos entenderán el atributo "nomodule", por lo tanto no accederán a este script, porque sabrán que es un script pensado por y para los navegadores obsoletos.</p>
+    </li>
+    <li>
+      <p>        
+        Los navegadores antiguos no entenderán el atributo "nomodule", pero tampoco le harán caso y cargarán este script alternativo.
+      </p>
+    </li>
+  </ul>
+  <p>
+  </p>
+
+  <!-- 
+    Es necesario poner: type="module"
+    en el script al cual le vamos a importar archivos ya que sin este
+    no funcionara
+  -->
+  <script type="module" src="./modulos.js"></script>
+  
+  <!-- 
+    Es necesario poner: nomodule
+    en el script al cual solo esta pensado para navegadores antiguos
+  -->
+  <script nomodule="./no-module.js"></script>
+</body>
+</html>

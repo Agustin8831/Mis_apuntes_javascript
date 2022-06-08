@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>    
+    
+    console.log("-------  recorriendo un set con for -------");
+    const set = new Set([1,2,3,3,"h","h","a",{}]);
+    for (const i of set) {
+      console.log(i);
+    }
+
+    console.log("-------  recorriendo un set con foreach -------");    
+    set.forEach(elemn => {
+      console.log(elemn);
+    });
+
+    console.log("-------  Comvirtiendo el obj set en array -------");
+    console.log(Array.from(set));
+    // --------------  
+
+  </script>
+</body>
+</html>

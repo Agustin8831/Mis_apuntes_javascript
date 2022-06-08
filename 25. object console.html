@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    
+    console.log("------- clear");
+    console.clear()
+
+    console.log("------- group - groupCollapsed - groupEnd");
+    console.groupCollapsed("Aqui empieza el grupo")
+    console.log("a");
+    console.log("a");
+    console.log("a");
+    console.log("a");
+    console.log("a");
+    console.log("a");
+    console.groupEnd()
+    
+    console.log("");
+    console.log("------- error");
+    console.error("Este es un mensaje de error")
+    
+    console.log("");
+    console.log("------- warn");
+    console.warn("Este es un mensaje de peligro")
+   
+    console.log("");
+    console.log("------- assert");
+    // Aparece un mensaje de error en la consola si la afirmación es 
+    // falsa. Si la afirmación es verdadera, no aparecerá nada.
+    let mensaje = "No cumplio la condicion";
+    console.assert(3 == 2, {mensaje})
+   
+    console.log("");
+    console.log("------- table");
+    // Muestra una tabla y un array
+    console.groupCollapsed("Tablas");
+    const a = [1,2,3,4,5];
+    console.table(a)
+    const b = {
+      name: "Agsutin",
+      surname: "Perez",
+      edad: 20
+    }
+    console.table(b)
+    console.groupEnd()
+   
+    console.log("");
+    console.log("------- dir");
+    // despliega una lista interactiva de las propiedades del objeto 
+    // JavaScript especificado. El resultado es presentado como un 
+    // listado jerárquico con triángulos de despliegue que te dejan ver 
+    // los contenidos de los objetos hijos.
+    console.dir(document)
+   
+    console.log("");
+    console.log("------- info");
+    console.info("Este es una breve informacion parecido a log")
+   
+    console.log("");
+    console.log("------- ");
+    console.log("")
+    
+  </script>
+</body>
+</html>

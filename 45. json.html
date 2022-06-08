@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    
+    // JSON
+    /* 
+    se utiliza para estructurar datos en forma de texto y permite el intercambio de información entre aplicaciones de manera sencilla, liviana y rápida. Por eso, es tan importante saber cómo se estructura y las principales diferencias con el modelo XML.
+    */
+
+    /*
+    -------- Diferencia JSON
+    objetos y arreglos:
+        Los nombres de las propiedades deben tener doble comilla, las comas finales están prohibidas.
+    Números:
+        Los ceros a la izquierda están prohibidos, un punto decimal debe ser seguido al menos por un dígito.
+    Cadenas:
+        Solo un limitado conjunto de caracteres pueden ser de escape; ciertos caracteres de control estan prohibidos; los caracteres de separador de linea Unicode (U+2028) y el separador de parrafo (U+2029) son permitidos; las cadenas deben estar entre comillas dobles.
+    
+    
+    */ 
+
+    const json = {
+      "nombre": "Agustin",
+      "apellido": "Perez",
+      "edad": "20",
+      "nacionalidad": "Mexicano"
+    };
+
+    console.log("-------  parse()  -------");
+    // El método JSON.parse() analiza una cadena de texto como JSON, transformando opcionalmente  el valor producido por el análisis.
+    console.log(JSON.parse('{"x": 5, "y": 6}'));
+    console.log(JSON.parse('[1,true,false,null,"soy texto"]'));
+    console.log(JSON.parse("true"));
+    console.log(JSON.parse("false"));
+    console.log(JSON.parse("2"));
+    console.log(JSON.parse("2.56"));
+    console.log(JSON.parse("null"));
+    
+    // Pero no acepta Nan ni undefined
+    // console.log(JSON.parse("NaN"));
+    // console.log(JSON.parse("undefined"));
+    
+    // No transformara nada con coma al final
+    // console.log(JSON.parse("[1,2,]"));
+    
+    console.log("-------  stringify()  -------");
+    // convierte un objeto o valor de JavaScript en una cadena de texto JSON, opcionalmente reemplaza valores si se indica una función de reemplazo, o si se especifican las propiedades mediante un array de reemplazo.s
+    console.log(JSON.stringify({x: 2, y: 3}));
+    console.log(JSON.stringify([1,2,3]));
+    console.log(JSON.stringify(true));
+    console.log(JSON.stringify(false));
+    console.log(JSON.stringify(2));
+    console.log(JSON.stringify(2.56));
+    console.log(JSON.stringify(null));
+    console.log(JSON.stringify(json));
+    
+  </script>
+</body>
+</html>

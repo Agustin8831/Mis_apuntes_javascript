@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // const
+    // En las constantes podemos guardar datos para que estos 
+    // ya no se puedan modificar, esto en tipos de datos 
+    // primitivos pero cuando son tipos de datos compuestos esto ya no aplica.
+
+    const nombre = "Agustin";
+    console.log(nombre);
+    // nombre = "Pedro";
+    // console.log(nombre); <- error porque no se puede cambiar el dato de unicio
+
+
+    console.log("--- Pruebas con tipos de datos compuestos guardados en un const ----");
+    // 
+
+    const array = ["verde","rojo","rosa"];
+    const objeto = {
+      nombre: "agustin",
+      apellido: "perez"
+    };
+
+    console.log("-----------  Salida sin modificar  -------------");
+    console.log(array);
+    console.log(objeto);
+
+    console.log("-----------  Salida modificada  -------------");
+    // Aqui estamos modificando
+    array.push("anaranjado");
+    objeto.apellido = "lopez";
+
+    console.log(array);
+    console.log(objeto);
+
+    /*
+    
+    Por lo que podemos ver en datos compuestos el const no le afecta
+    al momento de querer modificar los elemetos que llevan dentro.
+    
+    */
+
+  </script>
+</body>
+</html>

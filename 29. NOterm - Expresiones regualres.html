@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    
+    // Expresiones regulares
+    
+    // Las expresiones regulares son patrones que se utilizan para hacer 
+    // coincidir combinaciones de caracteres en cadenas. En JavaScript, las 
+    // expresiones regulares también son objetos. Estos patrones se utilizan 
+    // con los métodos exec() y test() de RegExp, y con match(), matchAll(), 
+    // replace(), replaceAll() (en-US), search() y split() métodos de String. 
+    
+    
+    let texto = "El doctor le dice al paciente: respire profundo que lo voy a auscultar. El paciente le responde: doctor, ¿de quién me va a ocultar si no le debo a nadie?";
+    
+    // Con /palabra/ escribimos la palabra a testear
+    let expReg = /doctor/y;
+    
+    console.log("-------  test()");
+    // Da un valor booleano si la palabra buscada este o no en un parrafo.
+    console.log(expReg.test(texto));
+    
+    console.log("-------  exec()");
+    // Ejecuta una búsqueda por una coincidencia en una cadena. Devuelve un arreglo de información
+    console.log(expReg.exec(texto));
+    
+    console.log("-------  ()");    
+    console.log(texto.match());
+
+
+  </script>
+</body>
+</html>

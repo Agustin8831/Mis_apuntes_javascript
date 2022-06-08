@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    
+    // array
+    // El objeto Array de JavaScript es un objeto 
+    // global que es usado en la construcción de arrays,
+    // que son objetos tipo lista de alto nivel.
+    
+    console.log("-------  Formas de inicializar  -------");
+    const arregloObject = new Array("texto",2,true,NaN);
+    const array1 = ["texto",2,true,NaN,undefined,null];
+    
+    console.log(arregloObject);    
+    console.log(array1);    
+    console.log("");
+    
+    console.log("-------  Buscar dentro de un arreglo  -------");
+    arr2 = ["hola",2,true,2.5,["pedro",2,false]];
+    // extraje el True
+    console.log(arr2[2]);
+    // extraje la letra L de la palabra hola
+    console.log(arr2[0][2]);
+    // extraje la palabra pedro del array
+    console.log(arr2[4][0]);
+    // extraje la letra O de la palabra pedro
+    console.log(arr2[4][0][4]);
+
+    console.log("-------  PROPIEDADES  -------");
+    // -------------- length 
+    console.log("array.length - nos dice cuantos elementos ahi dentro de un array");
+    let array2 = ["texto",2,true,NaN,undefined,null];
+    console.log(array2.length);
+    console.log("");
+    
+
+
+    
+    console.log("-------  METODOS  -------");
+    // -------------- contact()
+    console.log("array.contact(array) - se usa para unir dos o mas arrays.");
+    let martes = ["martes"];
+    let miercoles = ["miercoles"];
+    let jueves = ["jueves"];    
+    console.log(martes.concat(miercoles,jueves));
+    console.log("");
+
+    // -------------- push()
+    console.log("arr.push(elementos..) - añade uno o más elementos al final de un array y devuelve la nueva longitud del array.");
+    let array3 = [1,2,3,4];
+    console.log(array3.push(5,6,7));    
+    console.log(array3);
+    console.log("");
+        
+    // -------------- pop()
+    console.log("arr.pop() - elimina el último elemento de un array y lo devuelve. Este método cambia la longitud del array. ");
+    let array4 = [1,2,3,4];
+    console.log(array4.pop());
+    console.log(array4);
+    console.log("");
+    
+    // -------------- unshift()
+    console.log("arr.unshift(elemento) - agrega uno o más elementos al inicio del array, y devuelve la nueva longitud del array.");
+    let array5 = [1,2,3,4];
+    console.log(array5.unshift(9));
+    console.log(array5);
+    console.log("");
+    
+    // -------------- shift()
+    console.log("arr.shift() - elimina el primer elemento del array y lo retorna. Este método modifica la longitud del array.");
+    let array6 = [2,4,6,8];
+    console.log(array6.shift());
+    console.log(array6);
+    console.log("");
+      
+    // -------------- 
+    console.log("arr.indexOf(elementoSearch,indiceEmpezar) - retorna el primer índice en el que se puede encontrar un elemento dado en el array, ó retorna -1 si el elemento no esta presente.");
+    let dias = [1,2,3,4,5,6,7,8,9];
+    console.log(dias.indexOf(5)); // 4
+    console.log(dias.indexOf(5,7)); // -1
+    console.log(dias.indexOf(5,4)); // 4
+    console.log("");
+    
+    // -------------- splice()
+    console.log("arr.splice() - devuelve los elemento que no fueron eliminados, pero el valor del contenido ahora son los elementos eliminados");
+    let array7 =[1,2,3,4,5];
+    console.log(array7.splice(2)); // 3,4,5
+    console.log(array7); // 1,2
+    console.log("");
+    
+    console.log("Cuando se usa dos indices,devuelve los elemento eliminados, y el valor del contenido ahora son los elementos no eliminados");
+    let array8=["abajo","arriba","izquierda","derecha"];
+    console.log(array8.splice(1,2));
+    console.log(array8);
+    console.log("");
+    
+    console.log("Cuando se usa dos indices y un elemento,devuelve los elemento eliminados, y el valor del contenido ahora son los elementos no eliminados y el elemento que agregamos");
+    array8=["abajo","arriba","izquierda","derecha"];
+    console.log(array8.splice(1,2,"centro"));
+    console.log(array8);
+    console.log("");
+
+    array8 = ["abajo","arriba","izquierda","derecha"];
+    console.log(array8.splice(2,-1,"centro"));
+    console.log(array8);
+
+    // -------------- arr.copyWithin(target, start, end)
+    // console.log("arr.copyWithin(target, start, end) - transfiere una copia  plana de una sección a otra dentro del mismo array ( o contexto similar ), sin modificar su propiedad length y lo devuelve.");
+    // console.log([1,2,3,4,5,6]);
+    // console.log([1,2,3,4,5,6].copyWithin(2,-1));
+    // console.log([1,2,3,4,5,6].copyWithin(3));
+    // console.log([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]);
+    // console.log([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15].copyWithin(4,10));
+    // console.log([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15].copyWithin(4,7,12));
+    console.log("");
+
+    // -------------- 
+    console.log("arr.slice() - devuelve una copia de una parte del array dentro de un nuevo array empezando por inicio hasta fin (fin no incluido). El array original no se modificará.");
+    array8=[1,2,3,4,5,6,7,8,9];
+    console.log(array8.slice()); // copia todo el array
+    console.log(array8.slice(4)); // copia de la posicion 5 en adelante
+    console.log(array8.slice(2,5)); // copia de la posicion 2 al 4
+    console.log(array8.slice(-1)); // copia el ultimo elemento
+    console.log("");
+    
+    // -------------- 
+    let nombres = ["joel","maria","pedro","rogelio","gerardo","agustin"];
+    console.log(" - ");
+    nombres.forEach( (nombre,i) => {
+      console.log(`Su nombre es: ${nombre} y su posicion es ${i+1}`);
+    });
+    console.log();
+    console.log("");
+    
+    // -------------- 
+    console.log(" - ");
+    console.log();
+    console.log("");
+
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+  // Arrow Function
+
+  // NO UTILIZAR ARROWS FUNCTIONS EN UN OBJECTO
+
+  // Primero definiremos la lista de parámetros, en caso de ser necesario, 
+  // entre paréntesis seguido del símbolo => y las {} para indicar 
+  // las instrucciones que se van a realizar.
+
+  // ----------------------------------------------------------------------------
+  console.log("-------  quitar o no los {}");
+  // Cuando la funcion solo tiene una linea de codigo dentro de la funcion
+  //  podemos quitar los corchetes {} pero si hay mas no podemos hacer esto.
+
+  // Sin {}
+  const saludo1 = nombre => console.log(`Hola ${nombre}`);
+  saludo1("Jose") 
+  
+  // Con {}
+  const saludo2 = (a,b) => {
+    let resp = a + b;
+    console.log(resp);
+  }
+  saludo2(4,6) 
+
+
+  console.log("");
+  // ----------------------------------------------------------------------------
+  console.log("------- Quitar o no los () en los Paranetros");
+  // Cuando solo ocupemos un parametro podemos quitar los ()
+  // pero si vamos a ocupar mas de uno, si es necesario usarlos
+
+  // Sin ()
+  const saludo3 = nombre => console.log(`Hola ${nombre}`);
+  saludo3("Ramon") 
+ 
+  // Con ()
+  const saludo4 = (nombre,edad) => console.log(`nombre: ${nombre}, edad: ${edad}`); 
+  saludo4("Jose",20) 
+
+  console.log("");
+  // ----------------------------------------------------------------------------
+  console.log("------- Funciones en forEach");
+  // En los forEach podemos usar las arrow functions, () => {}
+  const numeros = [1,2,3];
+  numeros.forEach(
+    (elemento,i) => console.log(`${elemento} esta en la posisicon ${i}`)
+  )
+  
+  console.log("");
+  // ----------------------------------------------------------------------------
+  console.log("------- Funciones en object");
+  // Se pueden usar las arrow function en object pero no es recomendable
+  // para eso mejor usar las funciones literales
+  
+  const mapa2 = {
+    saludo: () => {
+      console.log(this);
+    }
+  };
+  mapa2.saludo()
+
+
+  </script>
+</body>
+</html>

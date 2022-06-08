@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    
+    // IIFE - immediately invoked function expression
+    // Se usa para separar variables del scope y que solo se puedan usar 
+    // dentro de esta funcion, tambien se usa para async await
+
+    // Es muy importante utilizar el ; aqui
+    
+    // Forma de crear una funcion anonima
+    (function () {
+      let a = 4;
+      console.log("hola");
+    })();
+
+
+    console.log(a); //da error ya que a esta fuera del scope
+
+
+  </script>
+</body>
+</html>

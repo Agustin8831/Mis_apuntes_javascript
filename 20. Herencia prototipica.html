@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    
+    // herencia
+    
+    // Funcion constructora padre 
+    function Saludo(nombre,apellido) {
+      this.nombre = nombre;
+      this.apellido = apellido;
+    }    
+    // Metodos
+    Saludo.prototype.hola = function () {
+      console.log(`Hola ${this.nombre} ${this.apellido}`);
+    };
+    Saludo.prototype.sonar = function () {
+      console.log("Soy un perro guau guau!!");
+    };
+    
+    // -----------------------------------------------------------
+    // Herencia prototipica 
+    function Bienvenida(nombre,apellido,edad){
+      // Agregamos la funcion constructora
+      Saludo.call(this, nombre, apellido)
+      this.edad = edad;
+    }
+
+    // -----------------------------------------------------------
+    // Para hacer el viculo lo tenemos que hacer antes de crear las 
+    // demas funciones constructivas hijas del padre 
+    Bienvenida.prototype = Object.create(Saludo.prototype) 
+    Bienvenida.prototype.constructor = Bienvenida;         
+    // -----------------------------------------------------------
+    
+    // Metodos
+    Bienvenida.prototype.suma = function () {
+      console.log(2 + 4);
+    }
+    
+    
+    const saludo1 = new Saludo("Agustin","Perez");
+    console.log(saludo1);
+    saludo1.hola()
+    saludo1.sonar()
+
+    console.log("");    
+    const bienvenida1 = new Bienvenida("Pedro","ruiz",32);
+    console.log(bienvenida1);    
+    bienvenida1.hola()
+    bienvenida1.sonar()
+    bienvenida1.suma() 
+
+    console.log("");
+
+    // -----------------------------------------------------------
+    // Sobrescritura de metodos del prototipo padre desde el hijo
+    Bienvenida.prototype.hola = function () {
+      console.log("Este metodo hola a sido cambiado desde el hijo");
+    }
+
+    bienvenida1.hola()
+
+    console.log("");
+
+
+  </script>
+</body>
+</html>

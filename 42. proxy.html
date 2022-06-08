@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    
+    // Proxies
+    // permite crear un intermediario para otro objeto, el cual puede interceptar y redefinir operaciones fundamentales para dicho objeto.
+    /*
+    Un Proxy se crea con dos parámetros:
+
+        target: el objeto original que se quiere envolver.
+
+        handler: un objeto que define cuáles operaciones serán interceptadas y cómo redefinir dichas operaciones.
+    */ 
+    
+    console.log("-------    -------");
+    // Persona seria el object base
+    const persona = {
+      nombre: "",
+      apellido: "",
+      nacionalidad: "",
+      edad: 0,
+    };
+
+    // Este seria el handler (manejador)
+    const manejador = {
+      // Con set podemos establecer todo tipo de evaluaciones
+      set(objeto,propiedades,valor){
+        if (Object.keys(objeto).indexOf(propiedades) === -1){
+          return console.error(`La propiedad ${propiedades} no existe en el object persona`);
+        }
+        // De esta manera podemos agregar valores y propiedades 
+        // a nuestro obj padre
+        objeto[propiedades] = valor;        
+      }
+    };
+
+    // creando un object hijo del padreo Persona que seria en este caso.
+    const agustin = new Proxy(persona,manejador);
+    
+    console.log(agustin);
+    agustin.nombre = "Agustin";
+    agustin.apellido = "Perez";
+    agustin.edad = 20;
+    agustin.nacionalidad = "Mexicano";
+    // podemos agregar propiedades al obj hijo (agustin)
+    // Pero como en este caso escamos condicionando que no se puedadan agregar nos dara error
+    agustin.redes = "@Agustin_883";
+    console.log(agustin);
+    
+    // Aqui el obj (joel) heredara los valores del obj (agustin)
+    const joel = new Proxy(persona,manejador);
+    // Pero igual se puede remplazar los valores
+    joel.nombre = "Joel";
+    // Podemos eliminar propiedades
+    delete agustin.apellido;
+    console.log(joel);
+
+
+
+
+
+    console.log("");
+
+
+  </script>
+</body>
+</html>

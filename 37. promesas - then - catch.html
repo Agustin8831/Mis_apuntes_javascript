@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    console.log("-------  encadenar promesas con then()  -------");
+    /*
+    Cuando finalmente la promesa devuelva un valor, normalmente querrás hacer algo con ese valor devuelto.
+
+    Por ejemplo, si estabas haciendo una solicitud de red, podrías querer acceder a ese valor y mostrarlo en la página para el usuario.
+
+    Puedes definir las dos funciones callback que quieres llamar cuando una promesa se cumple o se rechaza. Estas funciones se definen dentro de un método then() anidado:
+    */ 
+    const otraPromesa2 = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve('valor de la promesa - 1');
+      }, 300);
+    });
+
+    // CONTINUACIÓN
+    otraPromesa2
+    .then(value => { console.log(value)}) 
+
+
+    // --------------- método catch()
+    // El métodocatch()  siempre será llamado cuando quiera que se encuentre un error en cualquier punto a lo largo de la cadena de promesas:
+
+    const miPromesa = new Promise((resolve, reject) => {  
+      let a = false;
+      setTimeout(() => {
+          return (a) 
+          ? resolve('se encontró a')
+          : reject('lo siento, no se encontró a');
+      }, 300);
+    }); 
+
+    miPromesa
+      .then(value => { console.log(value) })
+      .catch(err => { console.error(err) });
+
+
+
+
+
+
+  </script>
+</body>
+</html>

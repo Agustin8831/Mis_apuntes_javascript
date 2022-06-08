@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+console.log("-----------  Doble asignacion de valores -----------");
+let apellido = "perez";
+let nombre = apellido +=" santiago";
+console.log(apellido);
+
+console.log("");
+console.log("-----------  closure  -----------");
+
+/*
+Un closure es la combinación entre una función y el ámbito léxico en el que esta fue declarada. Con esto, la función recuerda el ámbito en el que se creó. La mejor forma de entender un closure es por medio de un ejemplo práctico.
+*/ 
+
+const contador = (coins)=>{
+  let saveConins = 0;
+
+  const coinsCont = (coins)=>{
+    saveConins += coins;
+    console.log(saveConins);
+  }
+
+  return coinsCont;
+}
+let cont = contador();
+cont(2);
+cont(4);
+cont(6);
+
+console.log("");
+console.log("-----------  Ámbito léxico en closures  -----------");
+
+
+const contador_1 = (i) => {
+  let count = i;
+  const agregador = () => {
+    console.log(count++);
+  }
+  return agregador;
+}
+
+let myCount = contador_1(1);
+myCount();
+myCount();
+myCount();
+
+let myCount_2 = contador_1(10);
+myCount_2();
+myCount_2();
+myCount_2();
+
+
+
+console.log("");
+console.log("-----------  crear variables privadas con closures  -----------");
+
+/*
+Una variable privada es aquella que tiene restricciones y mayor control para ser cambiada, modificada, eliminada o actualizada.
+
+Una de las formas de crear variables privadas en JavaScript, es por medio de los closures. Un closure tiene una variable local de scope de función, por lo que únicamente ese scope tiene acceso a esa variable.
+
+Si intentamos acceder en un scope diferente indicará un error. Por lo que, mediante la función dentro del closure vinculada a la variable local correspondiente, será la manera de acceder a la variable.
+*/ 
+
+const persona = (nombre) => {
+  var guardarNombre = "No hay nombre";
+  return {
+    getNombre(){
+      return guardarNombre;
+    },
+    setNombre(nombre){
+      guardarNombre = nombre;
+    }
+  };
+};
+
+const personaNueva = persona();
+
+console.log(personaNueva.getNombre());
+personaNueva.setNombre("Agustin")
+console.log(personaNueva.getNombre());
+console.log(guardarNombre);
+
+
+
+console.log("");
+console.log("-----------   -----------");
+
+  </script>
+</body>
+</html>

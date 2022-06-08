@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    
+    function cuadradoCallback(valor, fn) {
+      setTimeout(() => {
+        fn(valor, valor * valor)
+      },0 | Math.random() * 1000);
+    }
+    
+    function mensaje(valor, resultado) {
+      console.log("Inicia callback");      
+      console.log(`Callback: ${valor}, ${resultado}`);
+    }
+    
+    // Primera forma
+    cuadradoCallback(1,mensaje)
+    
+    
+    // Segunda forma
+    // Usando funcion anonima
+    console.log("-------  Efecto Callback Hell"); 
+    cuadradoCallback(2,(valor, resultado) => {
+      console.log(`Callback: ${valor}, ${resultado}`);
+      cuadradoCallback(3,(valor, resultado) => {
+        console.log(`Callback: ${valor}, ${resultado}`);
+        cuadradoCallback(4,(valor, resultado) => {
+          console.log(`Callback: ${valor}, ${resultado}`);
+          cuadradoCallback(5,(valor, resultado) => {
+            console.log(`Callback: ${valor}, ${resultado}`);
+            cuadradoCallback(6,(valor, resultado) => {
+              console.log(`Callback: ${valor}, ${resultado}`);
+            })
+          })
+        })
+      })
+    })
+
+
+  </script>
+</body>
+</html>

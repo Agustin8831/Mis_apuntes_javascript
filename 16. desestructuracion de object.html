@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    
+  console.log("");  
+  console.log("-------  Desestructuración en object  -------");
+  // Primera manera 
+  const usuario = {
+    nombre: "Agustin",
+    apellido: "Perez",
+    edad: 20
+  }; 
+  let {nombre,apellido,edad} = usuario;
+  console.log(nombre,apellido,edad);
+
+  // Segunda manera 
+  let a,b;
+  ({a,b} = {
+    a: 2,
+    b: 3
+  });
+  console.log(a,b);
+  
+  // Tercer manera 
+  let {x,y} = {
+    x: "hola,",
+    y: "como estas?"
+  };
+  console.log(x,y);
+
+  console.log("");
+  console.log("-------  Desestructuración en object tips -------");
+
+  // Asignar a una variable con un nombre diferente al de la propiedad del objeto.
+  const datos = {
+    nombre: "Agustin",
+    apellido: "Perez",
+    edad: 20
+  };
+
+  let {nombre: name, apellido: surname, edad: yearOld} = datos;
+  console.log(name,surname,yearOld);
+  console.log("");
+  
+  // Valores predeterminados
+  // se le puede asignar un valor predeterminado, en el caso de que el valor 
+  // desempacado del objeto sea undefined.
+  let {var1 = "pedro",var2 = 20} = {var1: "agustin"};
+  console.log(var1,var2);
+  console.log("");
+  
+  // Asignar nombres a nuevas variables y proporcionar valores predeterminados
+  ({a: var1 = 10, b: var2 = 10} = {a: 2});
+  console.log(var1,var2);
+  console.log("");
+   
+  // Agregar el resto de los valores a las variables
+  ({a,b,...c} = {a:1,b:2,c:3,d:4,e:5});
+  console.log(a,b,c);
+  console.log("");
+ 
+  // Desestructuración combinada de arreglos y objetos
+  const datos2 = [
+    {id:1},
+    {id:2},
+    {id:3}
+  ];
+  let [ , ,{id}] = datos2;
+  console.log(id);
+
+
+  </script>
+</body>
+</html>

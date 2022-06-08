@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    // String
+    // Son cadenas de texto, estos tienen propiedades y metodos.
+
+    // -------  Formas de crear una cadena de texto  -------
+    let nombre1 = "Agustin";
+    let nombre2 = 'Agustin';
+    let nombre3 = `Agustin`; // se crea  com alt + }} 
+    let nombre4 = new String("Agustin"); // es un object string, no muy comun
+    
+
+    console.log("---------  CONCATENAR CADENAS  -----------");
+    console.log("Usamos + para concatenar varias cadenas de texto");
+    console.log("Hola, ¿Como " + "estas? yo muy" + " bien");
+    console.log("Hola, ¿Como","estas? yo muy","bien");
+    let parrafo = "Hola, ¿como estas?";
+    console.log(`${parrafo} yo muy bien`);
+    console.log(``);
+    console.log("");
+
+
+
+    
+
+    console.log("-----------  PROPIEDADES  -----------");    
+    console.log(".length - da el numero de caracteres de un texto");
+    console.log(nombre1.length);
+    console.log("");
+
+
+
+
+
+    console.log("----------  COMPARAR CADENAS  ----------");
+    let a = 'a'
+    let b = 'b'
+    if (a < b) { // true
+      console.log(a + ' es menor que ' + b)
+    } else if (a > b) {
+      console.log(a + ' es mayor que ' + b)
+    } else {
+      console.log(a + ' y ' + b + ' son iguales.')
+    }
+    console.log("");
+
+
+
+
+
+
+
+
+
+
+    console.log("---------  METODOS DE INSTANCIA  ------------");
+    console.log(".charAt() - accedemos a un caracter");
+    console.log(nombre1.charAt(2),nombre1[4]);
+    console.log("");
+    
+    // ------------------ charCodeAt()
+
+    console.log(".charCodeAt() - da el valor unicode dependiendo del indice");
+    let string1 = "Hola soy agustin";
+    console.log(string1.charCodeAt(3));
+    console.log("");
+
+    // ------------------ String.fromCharCode()
+
+    console.log("String.fromCharCode() - devuelve varios valores unicode dependiendo del numero puesto");
+    console.log(String.fromCharCode(65,66,67,126));
+    console.log("");
+
+    // ------------------ concat()
+
+    console.log("var1.concat('',var2) - Podemos concatenar y agregar texto");
+    console.log("Hola".concat(' -- ', "mundo", " parse"));
+    console.log("");
+    
+    // ------------------ includes()
+
+    console.log("str.includes(\"palabra\") - podemos daber si una palabra o caracter se encuetra dentro, da true o false");
+    console.log("Bienvenido a mexico".includes("parse")); //false
+    console.log("Bienvenido a mexico".includes("mexico"));  //true
+    console.log("Bienvenido a mexico".includes("mex")); //true
+    console.log("");
+
+    // ------------------ indexOf()
+
+    console.log("str.indexOf(\"palabra\") - da el indice de la palabra");
+    console.log("como estas?".indexOf("e")); // 5
+    console.log("");
+
+    // ------------------ lastIndexOf()
+
+    console.log("str.lastIndexOf(\"palabra\") - da el ultimo indice de la palabra");
+    console.log("bienvenido a oaxaca".lastIndexOf("a"));
+    console.log("");
+
+    // ------------------ padEnd()
+
+    console.log("str.padEnd(num,palabra) - rellena la cadena actual con una cadena dada (repetida eventualmente) de modo que la cadena resultante alcance una longitud dada. El relleno es aplicado desde el final (derecha) de la cadena actual.");
+    console.log(
+      'abc'.padEnd(10) + "\n",
+      'abc'.padEnd(15, " foo") + "\n",
+      'abc'.padEnd(6, "123456") + "\n",
+      'abc'.padEnd(1)
+      );
+    console.log("");
+
+    // ------------------ padStart()
+    
+    console.log("str.padStart(num,palabra) - rellena la cadena actual con una cadena dada (repetida eventualmente) de modo que la cadena resultante alcance una longitud dada. El relleno es aplicado desde el inicio (izquierda) de la cadena actual.");
+    console.log(
+      'abc'.padStart(10) + "\n",
+      'abc'.padStart(15, " foo ") + "\n",
+      'abc'.padStart(6, "123456") + "\n",
+      'abc'.padStart(1)
+      );
+    console.log("");
+
+    // ------------------ repeat()
+
+    console.log("str.repeat(num) - repite la palabra las veces que queramos");
+    console.log("hola ".repeat(12));
+    console.log("");
+
+    // ------------------ replace()
+    
+    console.log("str.replace(palabra, palabra) - renplasa la primera palabra que coincida con la que allamos asignado, las demas palabras que tambien coincidad no se modificaran");
+    let text = "hola tengo un perro feo, pero este perro me gusta"
+    console.log(text);
+    console.log(text.replace("perro","piña"));
+    console.log("");
+    
+    // ------------------ replaceAll()
+    
+    console.log("str.replaceAll(palabra, palabra) - renplasa todas las palabra que coincida con la que allamos asignado");
+    let text1 = "hola tengo un perro feo, pero este perro me gusta";
+    console.log(text1);
+    console.log(text1.replaceAll("perro","piña"));
+    console.log("");
+    
+    // ------------------ slice()
+    
+    console.log("str.slice(num,num) - podemos extrar un pedazo del texto");
+    console.log("bienvenido a mexico.".slice(2,-1));
+    console.log("");
+    
+    // ------------------ split()
+    
+    console.log("str.split(tipo de separador,num) - podemos convertir una cadena de texto en un array, esto lo hacemos con un separador");
+    let text2 = "mexicanos al grito de guerra";
+    console.log(text2.split(" ",3));
+    console.log(text2.split(" ").reverse().join(" ")); //ponnerlo en reversa
+    console.log("");
+    
+    // ------------------ startsWith()
+    
+    console.log("str.startsWith(palabra,num) - indica si una cadena de texto comienza con los caracteres de una cadena de texto concreta, devolviendo true o false según corresponda.");
+    let text3 = "Hola tengo un perro, este perro es muy pequeño"
+    console.log(text3.startsWith("perr"));
+    console.log(text3.startsWith("perr",14));
+    console.log(text3.startsWith("perr",10));
+    console.log("");
+    
+    // ------------------ toLocaleLowerCase()
+    
+    console.log("str.toLocaleLowerCase() - transforma toda la cadena en minuscula");
+    console.log("AgusTin".toLocaleLowerCase());
+    console.log("");
+    
+    // ------------------ toLocaleUpperCase()
+    
+    console.log("str.toLocaleUpperCase() - transforma toda la cadena en mayuscula");
+    console.log("AgusTin".toLocaleUpperCase());
+    console.log("");
+    
+    // ------------------ toLowerCase()
+    
+    console.log("str.toLowerCase() - transforma toda la cadena en minuscula");
+    console.log("AgusTin".toLowerCase());
+    console.log("");
+    
+    // ------------------ toUpperCase()
+    
+    console.log("str.toUpperCase() - transforma toda la cadena en mayuscula");
+    console.log("AgusTin".toUpperCase());
+    console.log("");
+    
+    // ------------------ trim()
+    
+    console.log("str.trim() - quita los espacios excedentes");
+    console.log("     Ahi 5 espacios antes del texto  ");
+    console.log("     Aqui ya no hay espacios antes del texto  ".trim());
+    console.log("");
+    // ------------------ trimEnd()
+    
+    console.log("str.trimEnd() - quita los espacios excedentes del final");
+    console.log("  hola mundo   ","texto extra");
+    console.log("  hola mundo   ".trimEnd(),"texto extra");
+    console.log("");
+
+    // ------------------ trimStart()
+    
+    console.log("str.trimStart() - quita los espacios excedentes del principio");
+    console.log("texto extra","    hola mundo");
+    console.log("texto extra","    hola mundo".trimStart());
+    console.log("");
+
+    // ------------------ valueOf()
+
+    console.log("str.valueOf() - devuelve el valor primitivo de un objeto String como un tipo de dato cadena. ");
+    cadena = new String("Hello world");
+    console.log(cadena);
+    console.log(cadena.valueOf());
+
+
+
+
+
+
+  </script>
+</body>
+</html>

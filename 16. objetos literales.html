@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    
+    console.log("-------  objetos literales antes  -------");
+    let nombre = "agustin";
+    let apellido = "perez";
+
+    const datos1 = {
+      nombre: nombre,
+      apellido: apellido
+    }
+    console.log(datos1);
+    console.log("");
+    
+    console.log("-------  objetos literales Despues  -------");
+    const datos2 = {
+      nombre,
+      apellido
+    }
+    console.log(datos2);
+    console.log("");
+    
+    // --------------------------------------------------
+    console.log("-------  funciones en object Antes  -------");
+
+    const datos3 = {
+      perro: function () {
+        console.log("guau gua!!");
+      }
+    };
+    datos3.perro()
+    
+    console.log("-------  funciones en object Despues  -------");
+
+    const datos4 = {
+      perro () {
+        console.log("guau guau guau!!");
+      }
+    };
+    datos4.perro()
+
+
+  </script>
+</body>
+</html>

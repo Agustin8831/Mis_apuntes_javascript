@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // Number
+    // es un objeto primitivo envolvente que permite representar 
+    // y manipular valores numéricos.
+
+    console.log("---------  FORMAS DE CREAR UN DATO NUMBER  -----------");
+    let a = 20;
+    let b = Number(20);
+    let c = new Number(20);
+
+    console.log(typeof(a));
+    console.log(typeof(b));
+    console.log(typeof(c));
+
+    console.log(a === 20);
+    console.log(b === 20);
+    console.log(c === 20);
+    console.log("");
+    console.log("");
+
+    console.log("---------  STRING A NUMBER  -----------");
+    let num1 = "1";
+    let num2 = "2";
+    let num3 = "3";
+    
+    console.log("Imprimiendo que tipo de dato son");
+    console.log(typeof(num1));
+    console.log(typeof(num2));
+    console.log(typeof(num3));
+    console.log("");
+
+    console.log("Sumando los numeros");
+    console.log(num1+num2+num3);
+    console.log("");
+
+    // Formas de transformarlos
+    num1 = Number(num1);
+    num2 = parseInt(num2);
+    num3 = parseFloat(num3);
+
+    console.log("Imprimiendo que tipo de dato despues de transformarlos");
+    console.log(typeof(num1));
+    console.log(typeof(num2));
+    console.log(typeof(num3));
+    console.log("");
+
+    console.log("Sumando los numeros");
+    console.log(num1+num2+num3);
+    console.log("");   
+    
+    
+    console.log("---------  METODOS  -----------");
+    
+    // --------------  Number.isInteger()
+    console.log("Number.isInteger() - Nos da true si es entero, de ser un numero con decimales dara false");
+    console.log(Number.isInteger(2));
+    console.log(Number.isInteger(-2));
+    console.log(Number.isInteger(2.0));
+    console.log(Number.isInteger(0));
+
+    console.log("");
+
+    console.log(Number.isInteger(2.5));
+    console.log(Number.isInteger(NaN));
+    console.log(Number.isInteger(Infinity));
+    console.log(Number.isInteger('10'));
+    console.log(Number.isInteger(true));
+    console.log(Number.isInteger(false));
+    console.log("");
+   
+    // --------------  parseFloat()
+    console.log("parseFloat() - pasa de string a un numero float con sus decimales");
+    console.log(parseFloat('23.9')); // 23.9
+    console.log(typeof(parseFloat('23.9')));
+    console.log("");
+    
+    // --------------  parseInt()
+    console.log("parseInt() - pasa de string a un numero Int sin sus decimales");
+    console.log(parseInt('34.6')); // 34
+    console.log(typeof(parseInt('34.6')));
+    console.log("");
+    
+    // --------------  toFixed()
+    console.log("num.toFixed(num) - limita las decimales de un numero");
+    let num4 = 2.12345678;
+    console.log(num4.toFixed());
+    console.log(num4.toFixed(5));
+    console.log(2.35.toFixed(1)); //redondea 2.4
+    console.log(2.34.toFixed(1)); // no redondea 2.3
+    console.log(typeof(-2.12.toFixed(1))); // -2.1
+    console.log(typeof((-2.12).toFixed(1)));// pasa de numero a string '-2.1'
+    console.log("");
+    
+    // --------------  toLocaleString()
+    console.log("num.toLocaleString(idioma) - devuelve una cadena con una representación del idioma de este número.");
+    let num5 = 3500.123;
+    console.log(num5.toLocaleString());
+    console.log(num5.toLocaleString('de-DE'));
+    console.log(num5.toLocaleString('zh-Hans-CN-u-nu-hanidec'));
+    console.log(num5.toLocaleString('ar-EG'));
+    console.log("");
+    
+    // --------------  toString()
+    console.log("toString() - Pasa un numero a string");
+    let num6 = 123.543
+    console.log(num6.toString());
+    console.log(typeof(num6.toString()));
+    console.log("");
+    
+    // --------------  valueOf()
+    console.log("valueOf() - devuelve el valor primitivo envuelto de un objeto Número");
+    let num7 = new Number(21);
+    console.log(num7);
+    console.log(num7.valueOf());
+    
+    console.log(typeof(num7));
+    console.log(typeof(num7.valueOf()));
+    console.log("");
+    
+    // --------------  
+    console.log(" - ");
+    console.log();
+    console.log("");
+   
+    
+
+
+
+  </script>
+</body>
+</html>

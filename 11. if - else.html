@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    
+    // if- ese
+    // Nos ayuda a crear condiciones
+    
+    console.log("-------  formar de crear una condicion -------");
+    
+    let a = 10;
+    if (a == "5") {      
+      console.log(`${a} es igual a \'5\'`);
+    } else if (a > 8 && a < 10){
+      console.log(`${a} menor que 10 y mayor a 8`);
+    } else { 
+      console.log("Valor ingresado invalido");
+    }
+    
+
+
+    
+    // -------------------------------------------------------
+    console.log("");
+    console.log("-------  Operador condicional (ternario) -------");
+    /*
+    (condición) 
+    ? expr si es verdadero 
+    : expr si es falso 
+    */
+   
+   let edad = 6;
+   eresMayor = (edad>12) 
+   ? console.log("Eres mayor de edad")
+   : console.log("Eres menor de edad");
+   
+
+
+   // -------------------------------------------------------
+   console.log("-------  Operador condicional (ternario) -------");
+    let num = 29;
+
+    (num > 20) 
+    ? console.log(num + " es mayor que 20")
+    : (num < 10) 
+    ? console.log(num + " es menor que 10")
+    : console.log("valor ingresado invalido");
+    
+    // Esto es lo mismo que esto
+    if (num > 20) {
+      console.log(num + " es mayor que 20");
+    }else if (num < 10) {
+      console.log(num + " es menor que 10");
+    }else {
+      console.log("valor ingresado invalido");
+    };
+    
+    // -------------------------------------------------------
+    console.log("");
+    console.log("---  usando () y , en condiciones ternarios ---");
+    let age = 23;
+
+    age > 18 
+    ? (
+      console.log("si eres mayor de edad"),
+      console.log("Puedes pasar")
+    )
+    : (
+      console.log("No puedes pasar"),
+      console.log("Eres menor")
+    )
+
+
+    // -------------------------------------------------------
+    console.log("");
+    console.log("---  guardando la condicion en una variable ---");
+    var age2 = 12;
+    var url = age2 > 18 ? (
+        console.log("OK, puedes continuar."),
+        "continue.html" 
+    ) : (
+        console.log("Eres menor de edad!"),
+        console.log("Disculpa"),
+        "stop.html" 
+    );
+    console.log(url);
+
+
+
+  </script>
+</body>
+</html>

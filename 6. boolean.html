@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    
+    // booleans
+    // es un objeto contenedor para un valor booleano.
+
+    let a = true;
+    let b = false;
+    let c = new Boolean(true);
+    let d = new Boolean(false);
+    console.log(a,b,c,d);
+    
+    console.log("-------  METODOS  -------");
+
+    // --------------  toString()
+    console.log("boolean.toString() - transforma el object a una cadena string");
+    console.log(true.toString());
+    console.log(typeof(true.toString()));
+    console.log();
+    console.log("");
+    
+    // --------------  valueOf()
+    console.log("boolean.valueOf() - pasa el object a un valor primitivo");
+    let num1 = new Boolean(true);
+    console.log(num1);
+    console.log(typeof(num1));
+    console.log("");
+
+    console.log(num1.valueOf());
+    console.log(typeof(num1.valueOf()));
+
+    console.log();
+    console.log("");
+
+  </script>
+</body>
+</html>

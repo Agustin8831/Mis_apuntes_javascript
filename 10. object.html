@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    
+    // object
+    // Es usado para guardar una colección de datos definidos y 
+    // entidades más complejas. Los objetos pueden ser creados utilzando el 
+    // constructor Object()
+    
+    console.log("-------  Inicializar  -------");
+
+    // Dentro del objecto podemos guardar todo tipo de dato
+
+    const datos = {
+      nombre: "agustin",
+      apellido: "perez",
+      edad: 20,
+      nacionalidad: "mexicano",
+      arrayDentroDeUnObject: [1,2,3,4],
+      objectDentroDeUnObject: {
+        a:1,
+        b:2,
+        c:3
+      },
+      funcionDentroDeUnObject: function (){
+        console.log("Soy una funcion dentro de un object");
+        return "yo soy el return";
+      }
+    };
+
+    console.log("");
+    console.log("-------  Invocar  -------");
+
+    // Diferentes formas de extraer elementos de un object
+    console.log(datos["nombre"]); 
+    console.log(datos.apellido);
+    console.log(datos.arrayDentroDeUnObject);
+    console.log(datos.arrayDentroDeUnObject[2]);
+    console.log(datos.funcionDentroDeUnObject());
+    datos.funcionDentroDeUnObject();
+    console.log(datos.objectDentroDeUnObject);
+    console.log(datos.objectDentroDeUnObject.c);
+    console.log("");
+
+    console.log("----  usar una propiedad dentro de un object  ----");
+    // Con this.ElementoSeleccionado 
+    // Podemos agarrar un valor del objecto y usarlo dentro de este.
+
+    const saludo = {
+      nombre: "agustin",
+      apellido: "perez",
+      presentacion: function () {
+        console.log(`Hola bienvenido ${this.nombre} ${this.apellido}`);
+        return "yo soy el return"
+      },
+    };
+    saludo.presentacion()
+
+    // --------------  
+    console.log(" - ");
+    console.log();
+    console.log("");
+    
+    // --------------  
+    console.log(" - ");
+    console.log();
+    console.log("");
+    
+    // --------------  
+    console.log(" - ");
+    console.log();
+    console.log("");
+
+
+  </script>
+</body>
+</html>

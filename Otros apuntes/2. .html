@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    // 
+    /*
+    Clases = Modelo a seguir
+    
+    objetos = Es una instancia de una clase
+      atributos = es una caracteristica o propiedad del objeto 
+                  (son variables dentro del object)
+      metodos = son las acciones que un objeto puede realizar 
+      |         (son funciones dentro de un objeto)
+    
+    */ 
+
+    console.log("-------  funcion constructora  -------");
+    // Usaremos el ejemplo anterior en el cual queremos tener dos objetos iguales pero con valores diferentes en sus keys, de esta manera solo escribimos una vez la funcion para tener las veces que queramos un objeto
+
+    function Datos (nombre,nacionalidad) {
+      // Esto se le llama atributo
+      this.nombre = nombre;
+      this.nacionalidad = nacionalidad;
+      
+      // Esto se le llama metodo
+      this.saludo = function () {
+        console.log(`Hola ${this.nombre}`);
+      }
+    }
+    console.log("-------  Creando los object a partir de la funcion constructora");
+
+    // New nos ayuda a crear el object a partir de la funcion constructora
+    // new NombreDeLaFuncionConstructora(elementos...)
+    const persona1 = new Datos("Agustin","Mexicano");
+    const persona2 = new Datos("Jose","Colombiano");
+
+    console.log(persona1);
+    persona1.saludo()
+
+    console.log(persona2);
+    persona2.saludo()
+
+    console.log("-----------   -----------");
+    console.log("");
+  </script>
+</body>
+</html>

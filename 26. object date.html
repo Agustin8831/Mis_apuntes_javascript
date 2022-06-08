@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    
+    // 
+    // 
+    
+    console.log("-------  FECHAS  -------");
+    let fecha = new Date;
+    console.log(fecha);
+
+    // -------------------------------------------------------------
+    console.log("");
+    console.log("------- getDate()");
+    // Dia del mes
+    console.log(fecha.getDate());
+    
+    // -------------------------------------------------------------
+    console.log("");
+    console.log("------- getDay()");
+    // da el numero de dia de la semana
+    // lun mar mir jue vir sab dom
+    // 1   2   3   4   5   6   0
+    console.log(fecha.getDay());
+    
+    // -------------------------------------------------------------
+    console.log("");
+    console.log("------- getMonth()");
+    // da el numero de mes retrsado por 1
+    // ene feb marz abr may jun jul agos sep oct nov dic
+    // 0   1   2    3   4   5   6   7    8   9   10  11
+    console.log(fecha.getMonth());
+    
+    // -------------------------------------------------------------
+    console.log("");
+    console.log("------- getFullYear()");
+    // Da el año actual
+    console.log(fecha.getFullYear());
+    
+    // -------------------------------------------------------------
+    console.log("");
+    console.log("------- getHours()");
+    // da la hora en formato de 24hrs
+    console.log(fecha.getHours());
+    
+    // -------------------------------------------------------------
+    console.log("");
+    console.log("------- getMinutes()");
+    // Da los minutos
+    console.log(fecha.getMinutes());
+    
+    // -------------------------------------------------------------
+    console.log("");
+    console.log("------- getSeconds()");
+    // da los segundos
+    console.log(fecha.getSeconds());
+    
+    // -------------------------------------------------------------
+    console.log("");
+    console.log("------- getMilliseconds()");
+    // da los milisegundos
+    console.log(fecha.getMilliseconds());
+    
+    // -------------------------------------------------------------
+    console.log("");
+    console.log("------- toString()");
+    // transforma las fechas en cadenas de texto
+    console.log(fecha.getFullYear().toString());
+    
+    // -------------------------------------------------------------
+    console.log("");
+    console.log("------- toLocaleDateString()");
+    // Da el dia,mes y año
+    console.log(fecha.toLocaleDateString());
+    
+    // -------------------------------------------------------------
+    console.log("");
+    console.log("------- toLocaleString()");
+    // Da el dia,mes y año y hora
+    console.log(fecha.toLocaleString());
+    
+    // -------------------------------------------------------------
+    console.log("");
+    console.log("------- toLocaleTimeString()");
+    // Da la hora, minutos y segundos
+    console.log(fecha.toLocaleTimeString());
+
+  </script>
+</body>
+</html>

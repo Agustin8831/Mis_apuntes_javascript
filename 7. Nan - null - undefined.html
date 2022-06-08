@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    
+    
+    console.log("-------  undefined  -------");
+    // undefined
+    // representa un valor ausente.
+
+    let indefenida; // Solo estoy inicializando sin valor
+    console.log(indefenida);
+    console.log("");
+
+
+
+    
+    console.log("-------  null  -------");
+    // null
+    // representa un valor ausente, pero aqui lo isimos a proposito ya que se lo agregamos.
+    let nulo = null;
+    console.log(nulo);
+    console.log("");
+
+
+
+    
+    console.log("-------  NaN  -------");
+    // NaN
+    // Esto nos da cuando hacemos operaciones con diferentes tipos de datos incopatibles como un string con un entero.
+
+    // Aqui operaciones que no tiene sentido: 
+    let num1 = "hola" * 3;
+    let num2 = "hola" * "otro texto";
+    let num3 = true * [2,4];
+    let num4 = "hola" * false;
+    
+    console.log(num1);
+    console.log(num2);
+    console.log(num3);
+    console.log(num4);
+    console.log("");
+
+
+  </script>
+</body>
+</html>

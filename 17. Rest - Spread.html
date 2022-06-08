@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    
+    // Parametro Rest
+
+    // Nos permite tener la capacidad de parametros infinitos con 
+    // la agregacion de tres puntos y seguido un nombre.
+    // ejemplo (...datos)
+    // en este caso todo valor que agregemos a datos se guardara en una array ejemplo datos[1,2]
+
+    // Permite recibir todos los argumentos 
+    console.log("-------  REST  -------");
+    
+    function sumar(a,b,...c) {
+      let resp = a+b;
+
+      c.forEach(function (i) {
+        resp += i;
+      });
+
+      return resp;
+    }
+    console.log(sumar(10,20,30,40,50));
+    console.log("");
+
+    // ----------------------------------------
+    function myFun(a, b, ...manyMoreArgs) {
+    console.log("a =", a)
+    console.log("b =", b)
+    console.log("manyMoreArgs =", manyMoreArgs)
+    }
+
+    myFun("one", "two", "three", "four", "five", "six")
+    console.log("");
+    // Se creara un array vacio ya que no hay mas valores
+    // a agregar en el array
+    myFun("one", "two") 
+
+
+
+    console.log("-------  SPREAD  -------");
+    // Operador de propragacion - Operador Spread
+
+    // Aqui se esta pasando cada elemento de un arreglo 
+    // como argumento de un parametro, asi generando 
+    // otro arreglo con las mismas posiciones que la primera.
+    // De la forma antigua simplemente se agregaba tal 
+    // cual el arreglo, pero hay un problema y es que 
+    // asiendolo asi, se creaba un arreglo con otro arreglo dentro
+
+    let 
+    arr1 = [1,2,3],
+    arr2 = [4,5,6]
+    arr3 = [];    
+    arr3 = arr1.concat(arr2,"con concat");
+    console.log(arr3);
+    arr3 = [...arr1, ...arr2,"con spread"];
+    console.log(arr3);
+
+    console.log("");
+    // ------------------------------------------------
+    function sum(x, y, z) {
+    return x + y + z;
+    }
+    const numbers = [1, 2, 3];
+    console.log(sum(numbers)); // sin spread
+    console.log(sum(...numbers)); // con spread
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    
+    // function
+    // Nos sirve para alamcenar pedazos de codigo, para luegos invocarlos.
+
+
+    console.log("----------  Funcion declarada  ----------");
+    
+    // Inicializar una funcion
+    function funcionUno () {
+      console.log("texto de la funcion uno");
+      return "este es el valor del return";
+    };
+
+    // invocar una funcion
+    funcionUno();
+    // Aqui estamos sacando el valor de la funcion, su return
+    console.log(funcionUno());
+
+    console.log("");
+    console.log("----------  Funcion expresada  ----------");
+    
+    // Funcion expresada
+
+    // Es crear una funcion y agregarselo a una variable 
+    // Por buenas practicas siempre lo guardamos en un const
+
+    // No es necesario poner nombre a la funcion ya que lo hizimos al const
+    const funcionExpresada = function(){
+    console.log(`Esto es una funcion expresada, 
+    es decir, una funcion que se le ha asignado como 
+    valor a una variable`)
+
+    return "Hola como ta?"; 
+    };
+
+    // Invocando la funcion
+    funcionExpresada();
+
+    // Aqui estamos sacando el valor de la funcion, su return
+    console.log(funcionExpresada()); 
+
+    console.log("");
+    console.log("----------  Return ¿Que es? ----------");
+
+    // Es el valor de la funcion en si, osea que los pedazos de codigo 
+    // dentro de la funcion no lo son, es solo lo que tenga guardado el return.
+    const suma = function(a,b) {
+      console.log(a+b);
+      return "El resultado es de: " + (a+b);
+    };
+    suma(2,5);
+    console.log(suma(2,5));
+    
+    console.log("");
+    console.log("----------  Return lo que ignora ----------");
+    
+    // Todo lo que esta primero antes del primer return se ejecuta
+    // Y todo lo que esta despues se ignora
+    const numeros = function(){
+      console.log("uno");
+      return "Todo despues de este return se ignora";
+      console.log("dos");
+      console.log("tre");
+    }
+    console.log(numeros());
+
+    console.log("");
+    console.log("----------  Parametros ----------");
+    
+    // Los parametros son valores que podemos agregar a una funcion 
+    // y usarlas dentro de esta.
+    const resta = function(a,b) {
+      console.log(a-b);
+      return "El resultado es de: " + (a-b);
+    };
+    console.log(resta(5,2)); 
+
+    console.log("");
+    console.log("----------  Parametros por defecto ----------");
+    // Agregando parametros por defecto a una funcion
+    function saludar(nombre="Mario", edad=28){
+      console.log(`Hola mi nombre es ${nombre} y tengo ${edad} años`)
+    }
+    saludar();
+
+    console.log("");
+    console.log("La invocacion en funciones declaradas y su posicion");
+
+    // Estoy invocando antes de crearse la funcion
+    multiplicaion();
+
+    function multiplicaion(){
+      console.log(2*6);
+    };
+
+    // Estoy invocando despues de crearse la funcion
+    multiplicaion();
+
+    // ESTO NO ES POSIBLE CON UNA FUNCION EXPRESADA.
+
+
+  </script>
+</body>
+</html>

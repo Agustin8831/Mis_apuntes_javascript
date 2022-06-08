@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    
+    // Call
+    // llama a una función con un valor dado this y con argumentos provistos individualmente.
+    
+    
+    this.lugar = "Contexto Global";
+    
+    function saludo(saludo,nombre) {
+      // la propiedad lugar le agregamos this
+      console.log(`${saludo} ${nombre} desde el ${this.lugar}`);
+    }
+    
+    
+    const objeto = {
+      // Creamos otra propiedad llamada lugar
+      lugar: "Contexto Objeto"
+    };
+    
+    console.log("-------  Imprimiendo  -------");
+    // Este imprimira el csontexto global
+    saludo("hola","pedro");
+
+
+    console.log("");
+    console.log("-------  Imprimiendo con call  -------");
+    // agregamos al principio el contexto que va a tomar la funcion saludo, en este caso del contexto objeto
+    saludo.call(objeto,"adios","raul");
+    saludo.call(this,"adios","raul");
+    
+    
+    console.log("");
+    console.log("-------  Imprimiendo con apply  -------");
+    // Este imprimira el contexto objeto gracias a apply
+    saludo.apply(objeto,["bienvenido","raul"]);
+    saludo.apply(this,["bienvenido","raul"]);
+    
+    
+    console.log("-------  Imprimiendo con bind  -------");
+
+    this.nombre = "Ramon";
+
+    const persona = {
+      nombre: "Agustin",
+      saludar: function(){
+        console.log(`Hola ${this.nombre}`);
+      }
+    };
+    
+    const otraPersona = {
+      // Dentro de bind() agregamos el contexto de donde se va a ser ese enlazamiento
+      
+      // agregamos el valor de la propiedad persona.saludar a otro nuava propiedad dentro de otro objeto
+      
+      // CORRECTA
+      saludar: persona.saludar.bind(persona),
+      // Aqui estamos enlazando las propiedades del objeto window
+      saludar2: persona.saludar.bind(this),
+      // INCORRECTA
+      saludar3: persona.saludar
+    };
+    
+    persona.saludar();
+    otraPersona.saludar();  
+    otraPersona.saludar2();  
+
+    // Este nos dara undefined ya que no hay un enlazamiento entro el objeto
+    // persona y otraPérsona
+    otraPersona.saludar3();
+
+
+  </script>
+</body>
+</html>
